@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Книжковий Рай</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Підключення стилів -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Головна секція -->
+  <main class="section-main">
+    <img src="img/logo.png" alt="Логотип Книжкового Раю" class="section-main-logo">
+    <h1 class="section-main-title">Книжковий Рай</h1>
+    <h2 class="section-main-subtitle">Відкрий для себе наступну чудову книгу</h2>
+    <a href="#about" class="section-main-button">Дізнатися більше</a>
+  </main>
+
+  <!-- Друга секція: про бібліотеку -->
+  <section id="about" class="second-section">
+    <img src="img/library.jpg" alt="Бібліотека" class="second-section-img">
+    <div class="second-section-info">
+      <h3 class="section-subtitle">Ласкаво просимо до Книжкового Раю</h3>
+      <h3 class="section-title">Про нашу бібліотеку</h3>
+      <p class="second-section-text">
+        Ласкаво просимо до нашої бібліотеки, де ви знайдете широкий вибір книг для будь-якого віку та вподобань.
+        Приходьте та насолоджуйтеся читанням у затишній атмосфері.
+      </p>
+      <p class="second-section-name">
+        <span class="second-section-name2">ІВАН ІВАНЕНКО</span> - Засновник Книжкового Раю
+      </p>
+    </div>
+  </section>
+
+  <!-- Третя секція: рекомендовані книги -->
+  <section class="third-section">
+    <h3 class="section-subtitle">РЕКОМЕНДОВАНІ КНИГИ</h3>
+    <h3 class="section-title">Наша колекція</h3>
+
+    <div class="third-section-books">
+      <article class="third-section-book">
+        <img src="img/book1.jpg" alt="Книга 1" class="book-img">
+        <h4 class="book-title">Тінь і Світло</h4>
+        <p class="book-author">Автор: Оксана Петренко</p>
+        <p class="book-price">120 грн</p>
+      </article>
+
+      <article class="third-section-book">
+        <img src="img/book2.jpg" alt="Книга 2" class="book-img">
+        <h4 class="book-title">Мандрівка в часі</h4>
+        <p class="book-author">Автор: Сергій Коваленко</p>
+        <p class="book-price">150 грн</p>
+      </article>
+
+      <article class="third-section-book">
+        <img src="img/book3.jpg" alt="Книга 3" class="book-img">
+        <h4 class="book-title">Таємниці міста</h4>
+        <p class="book-author">Автор: Марія Гнатюк</p>
+        <p class="book-price">95 грн</p>
+      </article>
+
+      <article class="third-section-book">
+        <img src="img/book4.jpg" alt="Книга 4" class="book-img">
+        <h4 class="book-title">Рецепти надії</h4>
+        <p class="book-author">Автор: Олена Мирна</p>
+        <p class="book-price">110 грн</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- Футер з формою підписки -->
+  <footer class="footer">
+    <h3 class="section-subtitle">КНИЖКОВИЙ РАЙ</h3>
+    <h3 class="section-title footer-title">Приєднуйтесь до нашої спільноти</h3>
+
+    <p class="footer-text">
+      <span class="footer-text-main">Підпишіться на нашу розсилку, щоб отримувати останні новини про новинки, ексклюзивні пропозиції та багато іншого.</span>
+      <br>
+      Для запитів, будь ласка, зв'яжіться з нами за номером (+380) 123-456-789
+    </p>
+
+    <form class="footer-form" id="subscribeForm" onsubmit="return handleSubscribe(event)">
+      <p class="form-title">Ім’я</p>
+      <input class="form-input" type="text" name="name" placeholder="Ваше ім'я" required>
+
+      <p class="form-title">Електронна пошта</p>
+      <input class="form-input" type="email" name="email" placeholder="name@example.com" required>
+
+      <p class="form-title">Телефон</p>
+      <input class="form-input" type="tel" name="phone" placeholder="+380XXXXXXXXX" pattern="\+380[0-9]{9}" required>
+
+      <button class="footer-button" type="submit">Підписатися</button>
+    </form>
+
+    <p style="margin-top:20px; color:#fff; font-size:14px;">© Книжковий Рай</p>
+  </footer>
+
+  <!-- Невеликий скрипт для демонстрації -->
+  <script>
+    function handleSubscribe(e){
+      e.preventDefault();
+      const form = e.target;
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      // Просте повідомлення — для реального проєкту відправляйте на сервер
+      alert("Дякуємо, " + (name || "читач") + "! Ви підписані на розсилку: " + email);
+      form.reset();
+      return false;
+    }
+
+  </script>
+</body>
+</html>
